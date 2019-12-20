@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 const bodyParser = require("body-parser");
+require('dotenv').config();
 app.use(cors());
 
 const multer = require("multer");
 
-mongoose.connect("mongodb://localhost/superheroes-db", { useNewUrlParser: true });
+mongoose.connect(process.env.mongo, { useNewUrlParser: true });
 
 const storageConfig = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -28,7 +29,7 @@ const fileFilter = (req, file, cb) => {
     }
 };
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3001");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();

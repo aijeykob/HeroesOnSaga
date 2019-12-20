@@ -1,6 +1,3 @@
-import axios from "axios";
-
-
 export const WRITE_TEXT = "WRITE_TEXT";
 export const SET_IMG = "SET_IMG";
 export const SET_SHOW_MODAL = "SET_SHOW_MODAL";
@@ -51,66 +48,3 @@ export const writingText = (text, field) => ({
 
     type: WRITE_TEXT, payload: text, field
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
