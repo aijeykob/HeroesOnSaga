@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from 'react';
 import Button from "react-bootstrap/Button";
 import { Card, Row } from "react-bootstrap";
 import CreateHeroContainer from "./CreateHeroContainer";
-import _ from 'lodash'
 import { NavLink } from "react-router-dom";
 
 const ViewHeroes = (props) => {
@@ -12,8 +11,7 @@ const ViewHeroes = (props) => {
     }, [])
 
     const selectHeroForUpdate = (e) => {
-        const selectedHero = _.findLast(props.HeroesArray, el => el._id === e.target.id);
-
+        const selectedHero = props.HeroesArray.find(el => el._id === e.target.id)
         props.setHeroForUpdate(selectedHero)
         props.setShowModal(true)
     };
